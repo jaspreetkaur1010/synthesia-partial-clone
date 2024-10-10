@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .content{
+    display: none;
+  }
+  .active-content {
+    display:block;
+  }
+
+  .active-tab {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; 
+    opacity:100%;
+}
+
+.active-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(30, 58, 138, 0.5); 
+    animation: fill-bg 15s forwards;
+}
+
+.active-tab .tab-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+@keyframes fill-bg {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+}
